@@ -1,17 +1,25 @@
 <template>
-  <div class="login">
+  <div class="login pb-64">
+      <h3 class="pt-64 text-4xl font-bold">Login</h3>
+
     <div class="px-8 pt-8">
-      <input class="p-4 rounded bg-orange-200 w-full" type="text" id="email" v-model="email" placeholder="Email" />
+      <input class="p-4 px-8 rounded-full bg-gray-100 w-full" type="text" id="email" v-model="email" placeholder="Email" />
     </div>
 
     <div class="px-8 pt-2">
-      <input class="w-full p-4 rounded bg-orange-200" type="password" id="password" v-model="password" placeholder="Password"/>
+      <input class="w-full p-4 px-8 bg-gray-100 rounded-full" type="password" id="password" v-model="password" placeholder="Password"/>
     </div>
 
-<div class="px-8 pt-2">
-    <button class="bg-orange-400 p-4 w-full text-white font-bold rounded" @click="login">Login</button>
+<div class="px-8 pt-4">
+    <button class="bg-orange-400 p-4 mb-4 w-full text-white font-bold rounded-full" @click="login">Login</button>
+    <router-link class="text-gray-300" to="/register">Create an account</router-link>
   </div>
+
+  <div role="alert" v-if="error" class="p-8 text-red-500">
+    <p>{{error}}</p>
   </div>
+
+</div>
 </template>
 
 <script>
@@ -21,7 +29,8 @@ export default {
   data: function() {
     return {
       email: "",
-      password: ""
+      password: "",
+      error: "",
     };
   },
   methods: {
@@ -33,13 +42,12 @@ export default {
           user => {
             alert(`You are logged in as ${user.user.email}`);
             this.$router.go({path: this.$router.path});
-          },
-          err => {
-            alert(err.message);
-          }
-        );
+          })
+        .catch(err => {
+        this.error = err.message;
+      });
       e.preventDefault();
     }
-  }
+  },
 };
 </script>

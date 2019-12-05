@@ -1,17 +1,25 @@
 <template>
-  <div class="register">
-    <div>
-      <input type="text" id="email" v-model="email" />
-      <label for="email">Email</label>
+  <div class="register pb-64">
+      <h3 class="pt-64 text-4xl font-bold">Register</h3>
+
+    <div class="px-8 pt-8">
+      <input class="p-4 px-8 rounded-full bg-gray-100 w-full" type="text" id="email" v-model="email" placeholder="Email" />
     </div>
 
-    <div>
-      <input type="password" id="password" v-model="password" />
-      <label for="password">Password</label>
+    <div class="px-8 pt-2">
+      <input class="w-full p-4 px-8 bg-gray-100 rounded-full" type="password" id="password" v-model="password" placeholder="Password"/>
     </div>
 
-    <button @click="register">Register</button>
+<div class="px-8 pt-4">
+    <button class="bg-orange-400 p-4 mb-4 w-full text-white font-bold rounded-full" @click="register">Register</button>
+    <router-link class="text-gray-300" to="/login">Already an user? Login.</router-link>
   </div>
+
+  <div role="alert" v-if="error" class="p-8 text-red-500">
+    <p>{{error}}</p>
+  </div>
+
+</div>
 </template>
 
 <script>
@@ -21,7 +29,8 @@ export default {
   data: function() {
     return {
       email: "",
-      password: ""
+      password: "",
+      error: "",
     };
   },
   methods: {
@@ -31,15 +40,14 @@ export default {
         .createUserWithEmailAndPassword(this.email, this.password)
         .then(
           user => {
-            alert(`Account created for ${user.user.email}`);
+            alert(`You are logged in as ${user.user.email}`);
             this.$router.go({path: this.$router.path});
-          },
-          err => {
-            alert(err.message);
-          }
-        );
+          })
+        .catch(err => {
+        this.error = err.message;
+      });
       e.preventDefault();
     }
-  }
+  },
 };
 </script>
