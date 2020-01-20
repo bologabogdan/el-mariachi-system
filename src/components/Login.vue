@@ -1,10 +1,9 @@
 <template>
   <div class="login bg">
-
-<div class="mx-24 pt-32">
-       <img src="../assets/logo.png" class="" alt />
-    
+    <div class="mx-24 pt-32">
+      <img src="../assets/logo.png" alt />
     </div>
+
     <h3 class="pt-16 text-3xl font-bold text-white">Login</h3>
 
     <div class="px-8 pt-8">
@@ -27,13 +26,15 @@
       />
     </div>
 
-<div class="px-8 pt-4">
-  <Button @click="login" buttonStyle="failure" class="mb-4">Login</Button><br>
-    <router-link class="text-gray-100 opacity-50" to="/register">Create an account</router-link>
-  </div>
+    <div class="px-8 pt-4">
+      <Button @click="login" buttonStyle="failure" class="mb-4">Login</Button>
+      <br />
+      <router-link class="text-gray-100 opacity-50" to="/register">Create an account</router-link>
+    </div>
 
-  <div role="alert" v-if="error" class="p-8 error-text">
-    <p>{{error}}</p>
+    <div role="alert" v-if="error" class="p-8 error-text">
+      <p>{{error}}</p>
+    </div>
   </div>
 </template>
 
@@ -41,8 +42,8 @@
 import firebase from "firebase";
 import Button from "@/components/UI/Button.vue";
 export default {
-    components: {
-    Button,
+  components: {
+    Button
   },
   name: "login",
   data: function() {
@@ -71,15 +72,13 @@ export default {
 </script>
 
 <style scoped>
-  
-  .bg {
-    background-color: #1EA896;
-    text-align: center;
-    height: 100vh;
-  }
+.bg {
+  background-color: #1ea896;
+  text-align: center;
+  height: 100vh;
+}
 
-  
-  .error-text {
-    color: #ff715b;
-  }
+.error-text {
+  color: #ff715b;
+}
 </style>

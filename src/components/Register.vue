@@ -2,7 +2,7 @@
   <div class="register bg">
 
     <div class="mx-24 pt-32">
-       <img src="../assets/logo.png" class="" alt />
+       <img src="../assets/logo.png" alt />
     
     </div>
     <h3 class="pt-16 text-3xl font-bold text-white">Register</h3>

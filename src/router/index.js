@@ -9,7 +9,6 @@ import Products from "../views/Products.vue";
 import Recipes from "../views/Recipes.vue";
 import Profile from "../views/Profile.vue";
 
-
 Vue.use(VueRouter);
 
 const routes = [
