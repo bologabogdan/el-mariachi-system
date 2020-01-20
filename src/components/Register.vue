@@ -16,11 +16,11 @@
     </div>
 
 <div class="px-8 pt-4">
-    <button class="bg-orange-400 p-4 mb-4 w-full text-white font-bold rounded-full" @click="register">Register</button>
-    <router-link class="text-gray-300" to="/login">Already an user?</router-link>
+  <Button @click="register" buttonStyle="failure" class="mb-4">Register</Button><br>
+    <router-link class="text-gray-100 opacity-50" to="/login">Already an user?</router-link>
   </div>
 
-  <div role="alert" v-if="error" class="p-8 text-red-500">
+  <div role="alert" v-if="error" class="p-8 error-text">
     <p>{{error}}</p>
   </div>
 
@@ -29,7 +29,11 @@
 
 <script>
 import firebase from "firebase";
+import Button from "@/components/UI/Button.vue";
 export default {
+    components: {
+    Button,
+  },
   name: "register",
   data: function() {
     return {
@@ -62,5 +66,10 @@ export default {
 
   .bg {
     background-color: #1EA896;
+    text-align: center;
+  }
+
+  .error-text {
+    color: #ff715b;
   }
 </style>

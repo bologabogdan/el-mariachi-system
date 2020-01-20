@@ -25,27 +25,23 @@
       />
     </div>
 
-    <div class="px-8 pt-4">
-      <button
-        class="bg-orange-400 p-4 mb-4 w-full text-white font-bold rounded-full"
-        @click="login"
-      >
-        Login
-      </button>
-      <router-link class="text-gray-300" to="/register"
-        >Create an account</router-link
-      >
-    </div>
+<div class="px-8 pt-4">
+  <Button @click="login" buttonStyle="failure" class="mb-4">Login</Button><br>
+    <router-link class="text-gray-100 opacity-50" to="/register">Create an account</router-link>
+  </div>
 
-    <div role="alert" v-if="error" class="p-8 text-red-500">
-      <p>{{ error }}</p>
-    </div>
+  <div role="alert" v-if="error" class="p-8 error-text">
+    <p>{{error}}</p>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import Button from "@/components/UI/Button.vue";
 export default {
+    components: {
+    Button,
+  },
   name: "login",
   data: function() {
     return {
@@ -73,7 +69,14 @@ export default {
 </script>
 
 <style scoped>
-.bg {
-  background-color: #1ea896;
-}
+  
+  .bg {
+    background-color: #1EA896;
+    text-align: center;
+  }
+
+  
+  .error-text {
+    color: #ff715b;
+  }
 </style>
