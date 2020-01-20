@@ -1,14 +1,14 @@
 <template>
   <div class="login bg">
     <div class="mx-24 pt-32">
-      <img src="../assets/logo.png" alt />
+      <img src="../assets/logo.png" class="w-64 h-36 block mx-auto"/>
     </div>
 
     <h3 class="pt-16 text-3xl font-bold text-white">Login</h3>
 
     <div class="px-8 pt-8">
       <input
-        class="p-4 px-8 rounded-full bg-gray-100 w-full"
+        class="p-4 px-8 rounded-full w-full"
         type="text"
         id="email"
         v-model="email"
@@ -18,7 +18,7 @@
 
     <div class="px-8 pt-2">
       <input
-        class="w-full p-4 px-8 bg-gray-100 rounded-full"
+        class="w-full p-4 px-8 rounded-full"
         type="password"
         id="password"
         v-model="password"
@@ -29,12 +29,12 @@
     <div class="px-8 pt-4">
       <Button @click="login" buttonStyle="failure" class="mb-4">Login</Button>
       <br />
-      <router-link class="text-gray-100 opacity-50" to="/register">Create an account</router-link>
+      <router-link class="text-gray-100 opacity-50" to="/register">Don't have an account?</router-link>
     </div>
 
-    <div role="alert" v-if="error" class="p-8 error-text">
-      <p>{{error}}</p>
-    </div>
+  <div role="alert" v-if="error" class="p-8">
+    <p class="error-text bg-white p-4 rounded-lg font-bold">{{error}}</p>
+</div>
   </div>
 </template>
 

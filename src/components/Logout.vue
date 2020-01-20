@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="px-8">
+    <div class="px-24">
       <Button @click="logout" buttonStyle="failure">Logout</Button>
     </div>
   </div>
