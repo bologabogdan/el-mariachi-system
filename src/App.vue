@@ -10,7 +10,8 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #4C5454;
+  background-color: #F7FAFC;
 }
 
 input {

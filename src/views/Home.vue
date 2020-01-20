@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bg">
     <Navigation></Navigation>
   </div>
 </template>
@@ -13,3 +13,4 @@ export default {
   }
 };
 </script>
+
