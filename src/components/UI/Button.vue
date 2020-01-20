@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button sm:w-1/2 rounded-full px-4 py-2"
+    class="button p-4 px-8 rounded-full w-full font-bold"
     :class="buttonStyle"
     v-bind="$attrs"
     :style="{ buttonType }"
@@ -27,9 +27,10 @@ export default {
 </script>
 
 <style scoped>
-.button:focus {
-  background-color: white;
+.button {
+  outline: none;
 }
+
 .primary {
   background-color: white;
   border: 2px solid white;

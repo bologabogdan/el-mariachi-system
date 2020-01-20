@@ -113,15 +113,16 @@ export default Vue.extend({
 }
 
 .nav a {
-  font-weight: bold;
   opacity: 0.5;
 }
 
 .nav a:hover {
   color: white;
+    font-weight: bold;
 }
 .nav a.router-link-exact-active {
   color: white;
+    font-weight: bold;
   opacity: 1;
 }
 </style>

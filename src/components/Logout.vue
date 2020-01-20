@@ -1,15 +1,19 @@
 <template>
   <div>
-    <div>
-      <button @click="logout">Logout</button>
+    <div class="px-8">
+      <Button @click="logout" buttonStyle="failure">Logout</Button>
     </div>
   </div>
 </template>
 
 <script>
 import firebase from "firebase";
+import Button from "@/components/UI/Button.vue";
 export default {
-  name: "navigation",
+    components: {
+        Button,
+    },
+  name: "logout",
   data() {
     return {
       isLoggedIn: false,
