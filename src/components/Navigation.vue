@@ -1,104 +1,101 @@
 <template>
-
-  <div class="nav w-full bg bottom-0 fixed z-40">
-
-    <div class="px-6 text-center flex h-16 items-center justify-between">
+  <div class="nav w-full bg bottom-0 fixed z-40 py-1">
+    <div class="px-6 text-center flex h-16 items-center justify-between text-white">
       <router-link to="/">
         <svg
           aria-hidden="true"
           focusable="false"
           data-prefix="fas"
-          data-icon="campground"
-          class="svg-inline--fa fa-campground w-4 h-4 mx-auto my-1"
-          role="img"
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 640 512"
-        >
-          <path
-            fill="currentColor"
-            d="M624 448h-24.68L359.54 117.75l53.41-73.55c5.19-7.15 3.61-17.16-3.54-22.35l-25.9-18.79c-7.15-5.19-17.15-3.61-22.35 3.55L320 63.3 278.83 6.6c-5.19-7.15-15.2-8.74-22.35-3.55l-25.88 18.8c-7.15 5.19-8.74 15.2-3.54 22.35l53.41 73.55L40.68 448H16c-8.84 0-16 7.16-16 16v32c0 8.84 7.16 16 16 16h608c8.84 0 16-7.16 16-16v-32c0-8.84-7.16-16-16-16zM320 288l116.36 160H203.64L320 288z"
-          />
-        </svg>
-            <div class="text-sm">Dashboard</div>
-      </router-link>
-
-      <router-link class="" to="/">
-        <svg
-          aria-hidden="true"
-          focusable="false"
-          data-prefix="fas"
-          data-icon="binoculars"
-          class="svg-inline--fa fa-binoculars w-4 h-4 mx-auto my-1"
+          data-icon="th-large"
+          class="svg-inline--fa fa-th-large w-4 h-4 mx-auto my-1"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
           <path
             fill="currentColor"
-            d="M416 48c0-8.84-7.16-16-16-16h-64c-8.84 0-16 7.16-16 16v48h96V48zM63.91 159.99C61.4 253.84 3.46 274.22 0 404v44c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32V288h32V128H95.84c-17.63 0-31.45 14.37-31.93 31.99zm384.18 0c-.48-17.62-14.3-31.99-31.93-31.99H320v160h32v160c0 17.67 14.33 32 32 32h96c17.67 0 32-14.33 32-32v-44c-3.46-129.78-61.4-150.16-63.91-244.01zM176 32h-64c-8.84 0-16 7.16-16 16v48h96V48c0-8.84-7.16-16-16-16zm48 256h64V128h-64v160z"
+            d="M296 32h192c13.255 0 24 10.745 24 24v160c0 13.255-10.745 24-24 24H296c-13.255 0-24-10.745-24-24V56c0-13.255 10.745-24 24-24zm-80 0H24C10.745 32 0 42.745 0 56v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V56c0-13.255-10.745-24-24-24zM0 296v160c0 13.255 10.745 24 24 24h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H24c-13.255 0-24 10.745-24 24zm296 184h192c13.255 0 24-10.745 24-24V296c0-13.255-10.745-24-24-24H296c-13.255 0-24 10.745-24 24v160c0 13.255 10.745 24 24 24z"
           />
         </svg>
-        <div class="text-sm">Products</div>
+        <div class="text-xs">Dashboard</div>
       </router-link>
 
-      <router-link class="" to="/">
+      <router-link class to="/products">
         <svg
           aria-hidden="true"
           focusable="false"
           data-prefix="fas"
-          data-icon="toolbox"
-          class="svg-inline--fa fa-toolbox w-4 h-4 mx-auto my-1"
+          data-icon="pepper-hot"
+          class="svg-inline--fa fa-pepper-hot w-4 h-4 mx-auto my-1"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
           <path
             fill="currentColor"
-            d="M502.63 214.63l-45.25-45.25c-6-6-14.14-9.37-22.63-9.37H384V80c0-26.51-21.49-48-48-48H176c-26.51 0-48 21.49-48 48v80H77.25c-8.49 0-16.62 3.37-22.63 9.37L9.37 214.63c-6 6-9.37 14.14-9.37 22.63V320h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-16c0-8.84 7.16-16 16-16h32c8.84 0 16 7.16 16 16v16h128v-82.75c0-8.48-3.37-16.62-9.37-22.62zM320 160H192V96h128v64zm64 208c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H192v16c0 8.84-7.16 16-16 16h-32c-8.84 0-16-7.16-16-16v-16H0v96c0 17.67 14.33 32 32 32h448c17.67 0 32-14.33 32-32v-96H384v16z"
+            d="M330.67 263.12V173.4l-52.75-24.22C219.44 218.76 197.58 400 56 400a56 56 0 0 0 0 112c212.64 0 370.65-122.87 419.18-210.34l-37.05-38.54zm131.09-128.37C493.92 74.91 477.18 26.48 458.62 3a8 8 0 0 0-11.93-.59l-22.9 23a8.06 8.06 0 0 0-.89 10.23c6.86 10.36 17.05 35.1-1.4 72.32A142.85 142.85 0 0 0 364.34 96c-28 0-54 8.54-76.34 22.59l74.67 34.29v78.24h89.09L506.44 288c3.26-12.62 5.56-25.63 5.56-39.31a154 154 0 0 0-50.24-113.94z"
           />
         </svg>
-         <div class="text-sm">Lists</div>
+        <div class="text-xs">Products</div>
       </router-link>
 
-      <router-link class="" to="/">
+      <router-link class to="/lists">
         <svg
           aria-hidden="true"
           focusable="false"
           data-prefix="fas"
-          data-icon="paper-plane"
-          class="svg-inline--fa fa-paper-plane w-4 h-4 mx-auto my-1"
+          data-icon="list-ul"
+          class="svg-inline--fa fa-list-ul w-4 h-4 mx-auto my-1"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 512 512"
         >
           <path
             fill="currentColor"
-            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+            d="M48 48a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm0 160a48 48 0 1 0 48 48 48 48 0 0 0-48-48zm448 16H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16zm0-320H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16V80a16 16 0 0 0-16-16zm0 160H176a16 16 0 0 0-16 16v32a16 16 0 0 0 16 16h320a16 16 0 0 0 16-16v-32a16 16 0 0 0-16-16z"
           />
         </svg>
-         <div class="text-sm">Recipes</div>
+        <div class="text-xs">Lists</div>
       </router-link>
 
-            <router-link class="" to="/">
+      <router-link class to="/recipes">
         <svg
           aria-hidden="true"
           focusable="false"
           data-prefix="fas"
-          data-icon="paper-plane"
-          class="svg-inline--fa fa-paper-plane w-4 h-4 mx-auto my-1"
+          data-icon="book-open"
+          class="svg-inline--fa fa-book-open w-4 h-4 mx-auto my-1"
           role="img"
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 512 512"
+          viewBox="0 0 576 512"
         >
           <path
             fill="currentColor"
-            d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"
+            d="M542.22 32.05c-54.8 3.11-163.72 14.43-230.96 55.59-4.64 2.84-7.27 7.89-7.27 13.17v363.87c0 11.55 12.63 18.85 23.28 13.49 69.18-34.82 169.23-44.32 218.7-46.92 16.89-.89 30.02-14.43 30.02-30.66V62.75c.01-17.71-15.35-31.74-33.77-30.7zM264.73 87.64C197.5 46.48 88.58 35.17 33.78 32.05 15.36 31.01 0 45.04 0 62.75V400.6c0 16.24 13.13 29.78 30.02 30.66 49.49 2.6 149.59 12.11 218.77 46.95 10.62 5.35 23.21-1.94 23.21-13.46V100.63c0-5.29-2.62-10.14-7.27-12.99z"
           />
         </svg>
-         <div class="text-sm">Profile</div>
+        <div class="text-xs">Recipes</div>
+      </router-link>
+
+      <router-link class to="/profile">
+        <svg
+          aria-hidden="true"
+          focusable="false"
+          data-prefix="fas"
+          data-icon="user"
+          class="svg-inline--fa fa-user w-4 h-4 mx-auto my-1"
+          role="img"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 448 512"
+        >
+          <path
+            fill="currentColor"
+            d="M224 256c70.7 0 128-57.3 128-128S294.7 0 224 0 96 57.3 96 128s57.3 128 128 128zm89.6 32h-16.7c-22.2 10.2-46.9 16-72.9 16s-50.6-5.8-72.9-16h-16.7C60.2 288 0 348.2 0 422.4V464c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48v-41.6c0-74.2-60.2-134.4-134.4-134.4z"
+          />
+        </svg>
+        <div class="text-xs">Profile</div>
       </router-link>
     </div>
-
   </div>
 </template>
 
@@ -106,24 +103,25 @@
 import Vue from "vue";
 
 export default Vue.extend({
-  name: "MobileNavigation",
+  name: "Navigation",
 });
 </script>
 
 <style scoped>
-  .bg {
-    background-color: #1EA896;
-  }
+.bg {
+  background-color: #1ea896;
+}
 
 .nav a {
   font-weight: bold;
-  opacity: 0.6;
+  opacity: 0.5;
 }
 
 .nav a:hover {
-  color: #805AD5;
+  color: white;
 }
 .nav a.router-link-exact-active {
-  color: #805AD5;
+  color: white;
+  opacity: 1;
 }
 </style>
