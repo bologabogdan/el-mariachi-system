@@ -7,6 +7,8 @@
     <Navigation></Navigation>
     <div class="w-full">
     </div>
+    <Navigation></Navigation>
+    <div class="w-full"></div>
   </div>
 </template>
 
@@ -23,5 +25,4 @@ export default {
 </script>
 
 <style scoped>
-
 </style>
