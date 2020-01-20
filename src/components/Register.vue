@@ -1,5 +1,5 @@
 <template>
-  <div class="register pb-64 bg">
+  <div class="register bg">
 
     <div class="mx-24 pt-32">
        <img src="../assets/logo.png" class="" alt />
@@ -67,6 +67,7 @@ export default {
   .bg {
     background-color: #1EA896;
     text-align: center;
+     height: 100vh;
   }
 
   .error-text {
