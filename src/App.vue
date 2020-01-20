@@ -12,4 +12,12 @@
   text-align: center;
   color: #2c3e50;
 }
+
+input {
+  outline: 0;
+}
+
+button {
+  outline: 0;
+}
 </style>

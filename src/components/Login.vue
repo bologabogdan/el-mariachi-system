@@ -1,6 +1,11 @@
 <template>
-  <div class="login pb-64">
-      <h3 class="pt-64 text-4xl font-bold">Login</h3>
+  <div class="login pb-64 bg">
+
+<div class="mx-24 pt-32">
+       <img src="../assets/logo.png" class="" alt />
+    
+    </div>
+    <h3 class="pt-16 text-3xl font-bold text-white">Login</h3>
 
     <div class="px-8 pt-8">
       <input class="p-4 px-8 rounded-full bg-gray-100 w-full" type="text" id="email" v-model="email" placeholder="Email" />
@@ -51,3 +56,11 @@ export default {
   },
 };
 </script>
+
+
+<style>
+
+  .bg {
+    background-color: #1EA896;
+  }
+</style>
