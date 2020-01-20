@@ -1,26 +1,50 @@
 <template>
-  <div class="w-full flex flex-wrap px-4 text-white font-bold mx-auto">
-    <div v-for="(tile, index) in tiles" :key="index" class="w-4/12 m-4 text-center">
-    <div class="w-full p-4 bg mr-4 rounded-lg">
-      <img :src="tile.icon" class="w-6 h-6 block mx-auto mb-4" />
-      <p>{{ tile.name }}</p>
-    </div>
+  <div class="w-full flex flex-wrap text-white font-bold px-8">
+    <div v-for="(tile, index) in tiles" :key="index" class="w-1/2 text-center p-1">
+      <div class="w-full bg rounded-lg">
+        <div class="p-8 pb-4">
+        <img :src="tile.icon" class="w-6 h-6 block mx-auto" />
+        </div>
+        <p class="p-8 pt-0 pb-1">{{ tile.name }}</p>
+        <div class="p-4 pb-8 mx-auto">
+        <router-link :to="tile.pathAdd">
+          <Button buttonStyle="primary" class="text-xs mb-2 text-center">Add</Button>
+        </router-link>
+        <router-link :to="tile.pathView">
+          <Button buttonStyle="secondary" class="text-xs">View</Button>
+        </router-link>  
+      </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import Button from "@/components/UI/Button.vue";
 export default {
+  components: {
+    Button
+  },
   data() {
     const pepper = require("../../assets/pepper-hot-solid.svg");
-        const list = require("../../assets/list-ul-solid.svg");
-            const book = require("../../assets/book-open-solid.svg");
+    const list = require("../../assets/list-ul-solid.svg");
+    const book = require("../../assets/book-open-solid.svg");
+
     return {
       tiles: [
-        { name: "Products", icon: pepper },
-        { name: "Lists", icon: list },
-        { name: "Recipes", icon: book },
-      
+        {
+          name: "Products",
+          icon: pepper,
+          pathAdd: "/add-product",
+          pathView: "/products"
+        },
+        { name: "Lists", icon: list, pathAdd: "/add-list", pathView: "/lists" },
+        {
+          name: "Recipes",
+          icon: book,
+          pathAdd: "/add-recipe",
+          pathView: "/recipes",
+        }
       ]
     };
   }
@@ -28,8 +52,7 @@ export default {
 </script>
 
 <style scoped>
-  .bg {
-    background-color: #ff715b;
-  }
-
+.bg {
+  background-color: #ff715b;
+}
 </style>

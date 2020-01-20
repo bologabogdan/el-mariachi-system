@@ -11,7 +11,6 @@
     ></Title>
   
     <Navigation></Navigation>
-    <div class="w-full"></div>
   </div>
 </template>
 

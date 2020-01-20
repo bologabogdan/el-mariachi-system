@@ -1,4 +1,5 @@
 <template>
+    <div class="w-full h-24">
   <div class="nav w-full bg bottom-0 fixed z-40 py-1">
     <div class="px-6 text-center flex h-16 items-center justify-between text-white">
       <router-link to="/">
@@ -96,6 +97,7 @@
         <div class="text-xs">Profile</div>
       </router-link>
     </div>
+  </div>
   </div>
 </template>
 
