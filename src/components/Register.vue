@@ -1,6 +1,11 @@
 <template>
-  <div class="register pb-64">
-      <h3 class="pt-64 text-4xl font-bold">Register</h3>
+  <div class="register pb-64 bg">
+
+    <div class="mx-24 pt-32">
+       <img src="../assets/logo.png" class="" alt />
+    
+    </div>
+    <h3 class="pt-16 text-3xl font-bold text-white">Register</h3>
 
     <div class="px-8 pt-8">
       <input class="p-4 px-8 rounded-full bg-gray-100 w-full" type="text" id="email" v-model="email" placeholder="Email" />
@@ -12,7 +17,7 @@
 
 <div class="px-8 pt-4">
     <button class="bg-orange-400 p-4 mb-4 w-full text-white font-bold rounded-full" @click="register">Register</button>
-    <router-link class="text-gray-300" to="/login">Already an user? Login.</router-link>
+    <router-link class="text-gray-300" to="/login">Already an user?</router-link>
   </div>
 
   <div role="alert" v-if="error" class="p-8 text-red-500">
@@ -51,3 +56,11 @@ export default {
   },
 };
 </script>
+
+
+<style>
+
+  .bg {
+    background-color: #1EA896;
+  }
+</style>
