@@ -1,8 +1,9 @@
 <template>
   <button
-    class="button sm:w-1/2"
+    class="button sm:w-1/2 rounded-full px-4 py-2"
     :class="buttonStyle"
     v-bind="$attrs"
+    :style="{ buttonType }"
     v-on="$listeners"
   >
     <slot />
@@ -16,13 +17,46 @@ export default {
     buttonStyle: {
       type: String,
       default: ""
+    },
+    buttonType: {
+      type: String,
+      default: "primary"
     }
   }
 };
 </script>
 
-<style>
+<style scoped>
 .button:focus {
-  outline: none;
+  background-color: white;
+}
+.primary {
+  background-color: white;
+  border: 2px solid white;
+  color: #ff715b;
+}
+
+.secondary {
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+}
+
+.success {
+  background-color: #1ea896;
+  border: 2px solid #1ea896;
+  color: white;
+}
+
+.failure {
+  background-color: #ff715b;
+  border: 2px solid #ff715b;
+  color: white;
+}
+
+.edit {
+  background-color: #4c5454;
+  border: 2px solid #4c5454;
+  color: white;
 }
 </style>
