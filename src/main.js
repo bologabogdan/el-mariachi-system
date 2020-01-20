@@ -10,7 +10,7 @@ Vue.config.productionTip = false;
 let app = "";
 
 firebase.initializeApp({
-  apiKey: "AIzaSyDTZvG3-qthqlVWo6PxvgrYqSKaCdG0gLQ",
+  apiKey: process.env.VUE_APP_API_KEY,
   authDomain: "el-mariachi-system.firebaseapp.com",
   databaseURL: "https://el-mariachi-system.firebaseio.com",
   projectId: "el-mariachi-system",
