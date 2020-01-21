@@ -6,7 +6,7 @@
     ></Title>
     <Navigation></Navigation>
     <div class="w-full">
-      {{ getProducts }}
+      {{ getProducts}}
     </div>
   </div>
 </template>
@@ -40,11 +40,11 @@ export default {
       this.$store.dispatch("addProduct", {
         id: this.idForTodo,
         name: this.newName,
-        items: this.newItems
+        quantity: this.newQuantity
       });
 
       this.newName = "";
-      (this.newItems = []), this.idForTodo++;
+      (this.newQuantity = []), this.idForTodo++;
     }
   }
 };

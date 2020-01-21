@@ -1,13 +1,15 @@
 import Vue from "vue";
 import Vuex from "vuex";
 import db from "../firebase";
-import products from "./products"
+import products from "./products";
+import recipes from "./recipes";
 
 Vue.use(Vuex);
 
 export default new Vuex.Store({
   modules: {
-    products
+    products,
+    recipes
   },
   state: {
     loading: true,
