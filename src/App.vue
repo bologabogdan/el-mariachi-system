@@ -16,6 +16,10 @@ input {
   outline: 0;
 }
 
+textarea {
+  outline: 0;
+}
+
 button {
   outline: none;
 }

@@ -8,6 +8,10 @@ import Lists from "../views/Lists.vue";
 import Products from "../views/Products.vue";
 import Recipes from "../views/Recipes.vue";
 import Profile from "../views/Profile.vue";
+import AddProduct from "../views/AddProduct.vue";
+import AddList from "../views/AddList.vue";
+import AddRecipe from "../views/AddRecipe.vue";
+
 
 Vue.use(VueRouter);
 
@@ -52,6 +56,33 @@ const routes = [
     path: "/profile",
     name: "profile",
     component: Profile,
+    meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: "/add-product",
+    name: "add-product",
+    component: AddProduct,
+    meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: "/add-list",
+    name: "add-list",
+    component: AddList,
+    meta: {
+      requiresAuth: true
+    }
+  },
+
+  {
+    path: "/add-recipe",
+    name: "add-recipe",
+    component: AddRecipe,
     meta: {
       requiresAuth: true
     }
