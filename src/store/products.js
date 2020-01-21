@@ -39,6 +39,10 @@ let products = {
 
     retrieveProducts(state, products) {
       state.products = products;
+    },
+    increment(state, product) {
+      const index = state.products.findIndex(item => item.id == product.id);
+      state.products[index].quantity++;
     }
   },
   actions: {
@@ -119,6 +123,20 @@ let products = {
         )
         .then(() => {
           context.commit("updateProduct", product);
+        });
+    },
+    increment(context, product) {
+      db.collection("products")
+        .doc(product.id)
+        .set(
+          {
+            name: product.name,
+            quantity: product.quantity++
+          },
+          { merge: true }
+        )
+        .then(() => {
+          context.commit("increment", product);
         });
     },
     deleteProduct(context, id) {

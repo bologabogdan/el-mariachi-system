@@ -11,8 +11,10 @@
     <Button buttonStyle="edit" class="ml-2 w-full">Filter</Button>
     </div>
     <div class="w-full">
-      <ProductList :products="getProducts" />
+      <ProductList :products="getProducts" :update="updateProduct"/>
     </div>
+
+    
     <Navigation></Navigation>
   </div>
 </template>
@@ -32,7 +34,9 @@ export default {
     ProductList
   },
   data() {
-    return {};
+    return {
+      quantity: 0
+    };
   },
   created() {
     this.$store.dispatch("initRealtimeListeners");
@@ -55,6 +59,13 @@ export default {
 
       this.newName = "";
       (this.newQuantity = []), this.idForTodo++;
+    },
+    updateProduct(p) {
+      this.$store.dispatch("updateProducct", {
+        id: p.id,
+        quantity: p.quantity,
+        name: p.name
+      })
     }
   }
 };

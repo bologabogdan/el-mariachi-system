@@ -20,11 +20,17 @@
         <h1 class="py-1">{{ product.name }}</h1>
       </div>
       <div class="w-2/5 flex">
-        <button class="button px-2 rounded-full font-bold failure text-xs" @click="holdQuantity(increment, product.quantity)">
+        <button
+          class="button px-2 rounded-full font-bold failure text-xs"
+          @click="holdQuantity(increment, product.quantity)"
+        >
           -
         </button>
         <h1 class="px-2 py-1">{{ product.quantity }}</h1>
-        <button class="button px-2 rounded-full font-bold success text-xs" @click="holdQuantity(decrement, product.quantity)">
+        <button
+          class="button px-2 rounded-full font-bold success text-xs"
+          @click="increment"
+        >
           +
         </button>
       </div>
@@ -40,14 +46,11 @@ export default {
   name: "productList",
   components: {},
   data() {
-      return {
-      }
+    return {};
   },
-  methods: {
-      
-  },
+  methods: {},
   computed: {
-      
+    
   },
   props: {
     products: {
