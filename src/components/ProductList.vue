@@ -44,19 +44,10 @@ export default {
       }
   },
   methods: {
-      increment(number) {
-          return number++
-      },
-
-      decrement(number) {
-          return number--
-      }
+      
   },
   computed: {
-      holdQuantity(fn, number) {
-          const newQuantity =  fn(number);
-          return newQuantity;
-      }
+      
   },
   props: {
     products: {
