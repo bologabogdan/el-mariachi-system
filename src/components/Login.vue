@@ -27,7 +27,7 @@
     </div>
 
     <div class="px-8 pt-4">
-      <Button @click="login" buttonStyle="failure" class="mb-4">Login</Button>
+      <Button @click="login" buttonStyle="failure" class="mb-4 w-full py-4">Login</Button>
       <br />
       <router-link class="text-gray-100 opacity-50" to="/register">Don't have an account?</router-link>
     </div>
