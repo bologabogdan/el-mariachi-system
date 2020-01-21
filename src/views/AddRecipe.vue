@@ -27,8 +27,8 @@
       </textarea>
     </div>
 
-    <div class="px-8 pt-2">
-    <Button buttonStyle="success" class="text-sm">Add product</Button>
+    <div class="px-8 pt-4">
+    <Button buttonStyle="success" class="w-full">Add product</Button>
     </div>
     <Navigation></Navigation>
 </div>

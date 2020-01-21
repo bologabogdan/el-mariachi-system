@@ -1,6 +1,6 @@
 <template>
   <button
-    class="button p-4 px-8 rounded-full w-full font-bold"
+    class="button p-2 rounded-full font-bold text-xs"
     :class="buttonStyle"
     v-bind="$attrs"
     :style="{ buttonType }"

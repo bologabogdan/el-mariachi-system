@@ -1,21 +1,29 @@
 <template>
   <div>
    <Title title="Lists" infoText="Here are the lists. Make a new list or browse the existing ones. Remember to check them everyday."></Title>
-    <Navigation></Navigation>
-    <div class="w-full">
-    <p>{{getLists}}</p>
+
+    <div class="flex px-8 text-sm w-full justify-end">
+    <Button buttonStyle="success" class="mr-1 w-1/5">Add</Button>
     </div>
+    <div class="w-full pt-8">
+    <ListItems :lists="getLists"></ListItems>
+    </div>
+    <Navigation></Navigation>
   </div>
 </template>
 
 <script>
 import Navigation from "@/components/Navigation.vue";
-import Title from "@/components/UI/Title.vue"
+import Title from "@/components/UI/Title.vue";
+import ListItems from "@/components/ListItems.vue";
+import Button from "@/components/UI/Button.vue";
 export default {
   name: "lists",
   components: {
     Navigation,
-    Title
+    Title,
+    ListItems,
+    Button
   },
   data() {
     return {}

@@ -12,7 +12,6 @@ import AddProduct from "../views/AddProduct.vue";
 import AddList from "../views/AddList.vue";
 import AddRecipe from "../views/AddRecipe.vue";
 
-
 Vue.use(VueRouter);
 
 const routes = [

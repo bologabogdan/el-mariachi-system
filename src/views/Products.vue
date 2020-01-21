@@ -6,9 +6,9 @@
     >
     
     </Title>
-    <div class="flex px-8 text-sm w-1/2">
-    <Button buttonStyle="success" class="mr-2 w-full">Add</Button>
-    <Button buttonStyle="edit" class="ml-2 w-full">Filter</Button>
+    <div class="flex px-8 text-sm w-full justify-end">
+    <Button buttonStyle="success" class="mr-1 w-1/5">Add</Button>
+    <Button buttonStyle="edit" class="ml-1 w-1/5">Filter</Button>
     </div>
     <div class="w-full">
       <ProductList :products="getProducts" :update="updateProduct"/>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="px-24">
-      <Button @click="logout" buttonStyle="failure">Logout</Button>
+      <Button @click="logout" buttonStyle="failure" class="w-full">Logout</Button>
     </div>
   </div>
 </template>
