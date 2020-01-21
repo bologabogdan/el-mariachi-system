@@ -16,7 +16,6 @@ let recipes = {
   mutations: {
     addRecipe(state, recipe) {
       state.recipes.push({
-        id: recipe.id,
         name: recipe.name,
         description: recipe.description
       });
@@ -24,7 +23,6 @@ let recipes = {
     updateRecipe(state, recipe) {
       const index = state.recipes.findIndex(item => item.id == recipe.id);
       state.recipes.splice(index, 1, {
-        id: recipe.id,
         name: recipe.name,
         description: recipe.description
       });
@@ -94,12 +92,11 @@ let recipes = {
     addRecipe(context, recipe) {
       db.collection("recipes")
         .add({
-          name: recipe.title,
+          name: recipe.name,
           description: recipe.description
         })
-        .then(docRef => {
+        .then(() => {
           context.commit("addRecipe", {
-            id: docRef.id,
             name: recipe.name,
             description: recipe.description
           });
@@ -111,7 +108,7 @@ let recipes = {
         .set(
           {
             // id: list.id,
-            name: recipe.title,
+            name: recipe.name,
             description: recipe.description
             // timestamp: todo.timestamp,
           },

@@ -11,6 +11,8 @@ import Profile from "../views/Profile.vue";
 import AddProduct from "../views/AddProduct.vue";
 import AddList from "../views/AddList.vue";
 import AddRecipe from "../views/AddRecipe.vue";
+import RecipeOverview from "../components/RecipeOverview.vue";
+import ListOverview from "../components/ListOverview.vue";
 
 Vue.use(VueRouter);
 
@@ -100,6 +102,24 @@ const routes = [
     component: Register,
     meta: {
       requiresGuest: true
+    }
+  },
+  {
+    path: "/recipe-overview",
+    name: "recipe",
+    component: RecipeOverview,
+    props: true,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: "/list-overview",
+    name: "list",
+    component: ListOverview,
+    props: true,
+    meta: {
+      requiresAuth: true
     }
   }
 ];

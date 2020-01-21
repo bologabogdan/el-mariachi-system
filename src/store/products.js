@@ -16,17 +16,16 @@ let products = {
   mutations: {
     addProduct(state, product) {
       state.products.push({
-        id: product.id,
         name: product.name,
-        quantity: product.quantity
+        quantity: product.quantity,
+        category: product.category
       });
     },
     updateProduct(state, product) {
       const index = state.products.findIndex(item => item.id == product.id);
       state.products.splice(index, 1, {
-        id: product.id,
         name: product.name,
-        quantity: product.quantity
+        quantity: product.quantity,
       });
     },
     deleteProduct(state, id) {
@@ -42,7 +41,17 @@ let products = {
     },
     increment(state, product) {
       const index = state.products.findIndex(item => item.id == product.id);
-      state.products[index].quantity++;
+      state.products.splice(index, 1, {
+        id: product.id,
+        quantity: product.quantity
+      });
+    },
+    decrement(state, product) {
+      const index = state.products.findIndex(item => item.id == product.id);
+      state.products.splice(index, 1, {
+        id: product.id,
+        quantity: product.quantity
+      });
     }
   },
   actions: {
@@ -98,7 +107,8 @@ let products = {
     addProduct(context, product) {
       db.collection("products")
         .add({
-          name: product.title,
+          name: product.name,
+          category: product.category,
           quantity: product.quantity
         })
         .then(docRef => {
@@ -115,9 +125,8 @@ let products = {
         .set(
           {
             // id: list.id,
-            name: product.title,
-            quantity: product.quantity
-            // timestamp: todo.timestamp,
+            name: product.name,
+            quantity: product.quantity,
           },
           { merge: true }
         )
@@ -130,8 +139,10 @@ let products = {
         .doc(product.id)
         .set(
           {
-            name: product.name,
-            quantity: product.quantity++
+            id: product.id,
+            // name: product.title,
+            quantity: product.quantity
+            // timestamp: todo.timestamp,
           },
           { merge: true }
         )
@@ -139,12 +150,28 @@ let products = {
           context.commit("increment", product);
         });
     },
+    decrement(context, product) {
+      db.collection("products")
+        .doc(product.id)
+        .set(
+          {
+            id: product.id,
+            // name: product.title,
+            quantity: product.quantity
+            // timestamp: todo.timestamp,
+          },
+          { merge: true }
+        )
+        .then(() => {
+          context.commit("decrement", product);
+        });
+    },
     deleteProduct(context, id) {
       db.collection("products")
         .doc(id)
         .delete()
         .then(() => {
-          context.commit("deleteProductt", id);
+          context.commit("deleteProduct", id);
         });
     }
   }

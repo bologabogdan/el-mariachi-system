@@ -1,11 +1,18 @@
 <template>
   <div>
-   <Title title="Recipes" infoText="New in the kitchen? Here you can find all the recipes and a guide on how to prepare them."></Title>
-       <div class="flex px-8 text-sm w-full justify-end">
-    <Button buttonStyle="success" class="mr-1 w-1/5">Add</Button>
+    <Title
+      title="Recipes"
+      infoText="New in the kitchen? Here you can find all the recipes and a guide on how to prepare them."
+    ></Title>
+    <div class="flex px-8 text-sm w-full justify-end">
+      <router-link to="/add-recipe" class=" w-1/5">
+        <Button buttonStyle="success" class="mr-1 w-full"
+          >Add</Button
+        ></router-link
+      >
     </div>
-     <div class="w-full pt-8">
-    <RecipesList :recipes="getRecipes"></RecipesList>
+    <div class="w-full pt-8">
+      <RecipesList :recipes="getRecipes"></RecipesList>
     </div>
 
     <Navigation></Navigation>
@@ -41,16 +48,6 @@ export default {
     }
   },
   methods: {
-    addRecipes() {
-      this.$store.dispatch("addRecipe", {
-        id: this.idForTodo,
-        name: this.newName,
-        description: this.newDescription
-      });
-
-      this.newName = "";
-      (this.newDescription = []), this.idForTodo++;
-    }
   }
 };
 </script>

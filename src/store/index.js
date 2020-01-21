@@ -24,17 +24,13 @@ export default new Vuex.Store({
   mutations: {
     addList(state, list) {
       state.lists.push({
-        id: list.id,
         name: list.name,
-        items: list.items
       });
     },
     updateList(state, list) {
       const index = state.lists.findIndex(item => item.id == list.id);
       state.lists.splice(index, 1, {
-        id: list.id,
         name: list.name,
-        items: list.items
       });
     },
     deleteList(state, id) {
@@ -105,14 +101,11 @@ export default new Vuex.Store({
     addList(context, list) {
       db.collection("lists")
         .add({
-          name: list.title,
-          items: list.items
+          name: list.name,
         })
-        .then(docRef => {
+        .then(() => {
           context.commit("addList", {
-            id: docRef.id,
             name: list.name,
-            items: list.items
           });
         });
     },
@@ -122,8 +115,7 @@ export default new Vuex.Store({
         .set(
           {
             // id: list.id,
-            name: list.title,
-            items: list.items
+            name: list.name,
             // timestamp: todo.timestamp,
           },
           { merge: true }

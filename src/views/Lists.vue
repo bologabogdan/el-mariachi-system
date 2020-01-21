@@ -1,12 +1,17 @@
 <template>
   <div>
-   <Title title="Lists" infoText="Here are the lists. Make a new list or browse the existing ones. Remember to check them everyday."></Title>
+    <Title
+      title="Lists"
+      infoText="Here are the lists. Make a new list or browse the existing ones. Remember to check them everyday."
+    ></Title>
 
     <div class="flex px-8 text-sm w-full justify-end">
-    <Button buttonStyle="success" class="mr-1 w-1/5">Add</Button>
+      <router-link to="/add-list" class="w-1/5">
+        <Button buttonStyle="success" class="mr-1 w-full">Add</Button>
+      </router-link>
     </div>
     <div class="w-full pt-8">
-    <ListItems :lists="getLists"></ListItems>
+      <ListItems :lists="getLists"></ListItems>
     </div>
     <Navigation></Navigation>
   </div>
@@ -26,35 +31,32 @@ export default {
     Button
   },
   data() {
-    return {}
+    return {};
   },
   created() {
-    this.$store.dispatch('initRealtimeListeners')
-    this.$store.dispatch('retrieveLists')
+    this.$store.dispatch("initRealtimeListeners");
+    this.$store.dispatch("retrieveLists");
   },
   computed: {
     getLists() {
       // eslint-disable-next-line
-      console.log(this.$store.getters.lists)
+      console.log(this.$store.getters.lists);
       return this.$store.getters.lists;
     }
   },
   methods: {
     addList() {
-      this.$store.dispatch('addList', {
+      this.$store.dispatch("addList", {
         id: this.idForTodo,
         name: this.newName,
         items: this.newItems
-      })
+      });
 
-      this.newName = ''
-      this.newItems = [],
-      this.idForTodo++
+      this.newName = "";
+      (this.newItems = []), this.idForTodo++;
     }
   }
 };
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
