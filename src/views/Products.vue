@@ -5,13 +5,13 @@
       infoText="Here you can have an overview of all available products from the kitchen. Also, you can add, edit or delete them."
     ></Title>
     <div class="flex w-1/2 px-8 text-sm">
-    <Button buttonStyle="success" class="mr-2">Add</Button>
-    <Button buttonStyle="edit" class="ml-2">Filter</Button>
+      <Button buttonStyle="success" class="mr-2">Add</Button>
+      <Button buttonStyle="edit" class="ml-2">Filter</Button>
     </div>
     <div class="w-full">
-      {{ getProducts}}
+      <ProductList :products="getProducts" />
     </div>
-  <Navigation></Navigation>
+    <Navigation></Navigation>
   </div>
 </template>
 
@@ -19,6 +19,7 @@
 import Navigation from "@/components/Navigation.vue";
 import Title from "@/components/UI/Title.vue";
 import Button from "@/components/UI/Button.vue";
+import ProductList from "@/components/ProductList.vue";
 
 export default {
   name: "products",
@@ -26,6 +27,7 @@ export default {
     Navigation,
     Title,
     Button,
+    ProductList
   },
   data() {
     return {};

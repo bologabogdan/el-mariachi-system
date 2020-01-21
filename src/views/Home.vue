@@ -4,12 +4,12 @@
       title="Dashboard"
       infoText="On this page you can access the quick navigation for Products, Lists and Recipes."
     ></Title>
-  <Tile></Tile>
+    <Tile></Tile>
     <Title
       title="Low On Stock"
       infoText="Here you can check the products that are on low quantities and update them."
     ></Title>
-  
+
     <Navigation></Navigation>
   </div>
 </template>
