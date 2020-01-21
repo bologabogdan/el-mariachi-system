@@ -58,8 +58,6 @@ export default {
 </script>
 
 <style scoped>
-.button {
-}
 .success {
   background-color: #1ea896;
   border: 1px solid #1ea896;

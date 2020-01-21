@@ -5,7 +5,7 @@
       infoText="This is your profile overview. From here yu can log out from the application and find contact information of the staff."
     ></Title>
 
-    <Logout></Logout>
+    <Logout class=""></Logout>
 
     <Title title="Contact" infoText="Here you can call or message the other staff members"></Title>
     <div class="px-8">

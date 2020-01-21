@@ -10,6 +10,15 @@
       infoText="Here you can check the products that are on low quantities and update them."
     ></Title>
 
+        <div class="w-full flex px-8 pb-4 font-bold">
+      <div class="w-2/3">
+        <h1>Name</h1>
+      </div>
+      <div class="w-1/3">
+        <h1>Quantity</h1>
+      </div>
+    </div>
+
     <Navigation></Navigation>
   </div>
 </template>
